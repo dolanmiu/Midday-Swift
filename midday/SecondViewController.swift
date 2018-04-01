@@ -1,11 +1,3 @@
-//
-//  SecondViewController.swift
-//  midday
-//
-//  Created by Dolan on 18/02/2018.
-//  Copyright © 2018 Dolan. All rights reserved.
-//
-
 import UIKit
 
 class SecondViewController: UIViewController {

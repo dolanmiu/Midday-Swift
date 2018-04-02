@@ -66,7 +66,7 @@
         <!--Community-->
         <scene sceneID="H1R-Yq-brg">
             <objects>
-                <viewController id="1B5-OB-Urw" sceneMemberID="viewController">
+                <viewController id="1B5-OB-Urw" customClass="CommunityViewController" customModule="midday" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vyY-xd-g3V">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

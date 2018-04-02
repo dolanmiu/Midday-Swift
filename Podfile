@@ -9,6 +9,7 @@ target 'midday' do
   pod 'SwiftLint'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
   pod 'FacebookCore'
   pod 'FacebookLogin'
   pod 'FacebookShare'

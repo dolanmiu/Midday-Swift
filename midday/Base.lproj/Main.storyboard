@@ -13,7 +13,7 @@
         <!--Home-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="midday" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="HomeViewController" customModule="midday" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -66,18 +66,79 @@
         <!--Community-->
         <scene sceneID="H1R-Yq-brg">
             <objects>
-                <viewController id="1B5-OB-Urw" customClass="CommunityViewController" customModule="midday" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1B5-OB-Urw" customClass="CommunitiesViewController" customModule="midday" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vyY-xd-g3V">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UEC-s7-o2H" customClass="CommunityTableView" customModule="midday" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CommunityTableViewCell" rowHeight="100" id="5go-ks-ics" customClass="CommunityTableViewCell" customModule="midday" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5go-ks-ics" id="iUC-lH-jyS">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VGa-3d-xJb" customClass="AvatarImageView" customModule="midday" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="79"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MoA-M4-vbw">
+                                                    <rect key="frame" x="151" y="11" width="209" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="MoA-M4-vbw" id="1dq-vv-HCI"/>
+                                            <outlet property="photoImageView" destination="VGa-3d-xJb" id="RDQ-yU-RjA"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UEC-s7-o2H" firstAttribute="trailing" secondItem="umw-fC-xj7" secondAttribute="trailing" id="56T-wD-LrZ"/>
+                            <constraint firstItem="UEC-s7-o2H" firstAttribute="bottom" secondItem="umw-fC-xj7" secondAttribute="bottom" id="Ijo-SU-g1C"/>
+                            <constraint firstItem="UEC-s7-o2H" firstAttribute="leading" secondItem="umw-fC-xj7" secondAttribute="leading" id="QXc-fT-ark"/>
+                            <constraint firstItem="UEC-s7-o2H" firstAttribute="bottom" secondItem="umw-fC-xj7" secondAttribute="bottom" id="UNi-Tu-8Wr"/>
+                            <constraint firstItem="UEC-s7-o2H" firstAttribute="top" secondItem="umw-fC-xj7" secondAttribute="top" id="eTJ-iK-IZT"/>
+                            <constraint firstItem="UEC-s7-o2H" firstAttribute="leading" secondItem="umw-fC-xj7" secondAttribute="leading" id="f1x-SL-ude"/>
+                            <constraint firstItem="UEC-s7-o2H" firstAttribute="trailing" secondItem="umw-fC-xj7" secondAttribute="trailing" id="fKE-7a-GpH"/>
+                            <constraint firstItem="UEC-s7-o2H" firstAttribute="top" secondItem="umw-fC-xj7" secondAttribute="top" id="uVo-NI-oUo"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="umw-fC-xj7"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Community" image="first" id="9hu-Rk-fma" userLabel="Community"/>
+                    <connections>
+                        <outlet property="communityTableView" destination="UEC-s7-o2H" id="sYN-MO-pn6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w6P-M0-Nwz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1" y="794"/>
+            <point key="canvasLocation" x="-2.3999999999999999" y="793.8530734632684"/>
+        </scene>
+        <!--Community View Controller-->
+        <scene sceneID="GZB-mP-MQo">
+            <objects>
+                <viewController id="mvJ-3b-huU" customClass="CommunityViewController" customModule="midday" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FLH-J4-uJk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="Kjy-ft-2YY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="buY-JP-Fca" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="719" y="1072"/>
         </scene>
         <!--Search-->
         <scene sceneID="wg7-f3-ORb">

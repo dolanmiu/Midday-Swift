@@ -10,9 +10,13 @@ target 'midday' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
+  pod 'FirebaseUI'
+  pod 'Firebase/Storage'
   pod 'FacebookCore'
   pod 'FacebookLogin'
   pod 'FacebookShare'
+  pod 'InitialsImageView', '0.2.0'
+  pod 'AvatarImageView', '~> 2.1.0'
   
   target 'middayTests' do
     inherit! :search_paths

@@ -17,6 +17,7 @@ target 'midday' do
   pod 'FacebookShare'
   pod 'InitialsImageView', '0.2.0'
   pod 'AvatarImageView', '~> 2.1.0'
+  pod 'ReSwift'
   
   target 'middayTests' do
     inherit! :search_paths

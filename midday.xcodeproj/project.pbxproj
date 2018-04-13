@@ -26,6 +26,7 @@
 		3EFD91F72076D19200581281 /* CommunityTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFD91F62076D19200581281 /* CommunityTableView.swift */; };
 		3EFD91F9207B011400581281 /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFD91F8207B011400581281 /* AvatarImageView.swift */; };
 		3EFD91FB207C499000581281 /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFD91FA207C499000581281 /* CommunityViewController.swift */; };
+		3EFD9203207EE3AF00581281 /* CommunityDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFD9202207EE3AF00581281 /* CommunityDetailsViewController.swift */; };
 		C5E1640A4CEB3B531EF1FC31 /* Pods_middayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02ED33D5DD0EEBA8A237A200 /* Pods_middayTests.framework */; };
 		E8BF288D45969F51C39C7509 /* Pods_middayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D15D6DDFD5D4B1A7655A3CB /* Pods_middayUITests.framework */; };
 /* End PBXBuildFile section */
@@ -73,6 +74,7 @@
 		3EFD91F62076D19200581281 /* CommunityTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityTableView.swift; sourceTree = "<group>"; };
 		3EFD91F8207B011400581281 /* AvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
 		3EFD91FA207C499000581281 /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
+		3EFD9202207EE3AF00581281 /* CommunityDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityDetailsViewController.swift; sourceTree = "<group>"; };
 		47FB3D622D184427023C60D0 /* Pods_midday.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_midday.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EE7ECD85153BF31D4651F80 /* Pods-midday.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-midday.release.xcconfig"; path = "Pods/Target Support Files/Pods-midday/Pods-midday.release.xcconfig"; sourceTree = "<group>"; };
 		84412540D57A6E2B811CF873 /* Pods-middayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-middayTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-middayTests/Pods-middayTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 		3E4AFA7E20390DB700E26791 /* midday */ = {
 			isa = PBXGroup;
 			children = (
+				3EFD9201207EE36F00581281 /* CommunityDetails */,
 				3EFD9200207C4AE200581281 /* Login */,
 				3EFD91FF207C4AC100581281 /* Community */,
 				3EFD91FE207C4A9100581281 /* Home */,
@@ -202,6 +205,14 @@
 				3E7CEE09207056610082B935 /* LoginViewController.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		3EFD9201207EE36F00581281 /* CommunityDetails */ = {
+			isa = PBXGroup;
+			children = (
+				3EFD9202207EE3AF00581281 /* CommunityDetailsViewController.swift */,
+			);
+			path = CommunityDetails;
 			sourceTree = "<group>";
 		};
 		A0BFB6649279F8FE2E31A523 /* Pods */ = {
@@ -470,6 +481,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/InitialsImageView/InitialsImageView.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
@@ -496,6 +508,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InitialsImageView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
@@ -586,6 +599,7 @@
 			files = (
 				3EFD91F9207B011400581281 /* AvatarImageView.swift in Sources */,
 				3E7CEE0A207056610082B935 /* LoginViewController.swift in Sources */,
+				3EFD9203207EE3AF00581281 /* CommunityDetailsViewController.swift in Sources */,
 				3E4AFA8420390DB700E26791 /* SecondViewController.swift in Sources */,
 				3E4AFA8020390DB700E26791 /* AppDelegate.swift in Sources */,
 				3EFD91F72076D19200581281 /* CommunityTableView.swift in Sources */,

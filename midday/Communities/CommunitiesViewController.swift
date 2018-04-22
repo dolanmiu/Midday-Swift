@@ -11,6 +11,12 @@ class CommunitiesViewController: UIViewController, UITableViewDataSource, UITabl
         return Firestore.firestore().collection("communities").limit(to: 50)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tabBarController?.tabBar.isHidden = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

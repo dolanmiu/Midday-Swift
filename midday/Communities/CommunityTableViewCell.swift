@@ -1,11 +1,3 @@
-//
-//  CommunityTableViewCell.swift
-//  midday
-//
-//  Created by Dolan on 04/04/2018.
-//  Copyright © 2018 Dolan. All rights reserved.
-//
-
 import UIKit
 import FirebaseStorageUI
 

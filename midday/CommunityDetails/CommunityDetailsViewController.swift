@@ -1,19 +1,9 @@
-//
-//  CommunityDetailsViewController.swift
-//  midday
-//
-//  Created by Dolan on 12/04/2018.
-//  Copyright © 2018 Dolan. All rights reserved.
-//
-
 import UIKit
 
 class CommunityDetailsViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

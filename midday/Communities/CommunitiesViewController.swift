@@ -1,7 +1,8 @@
 import UIKit
 import Firebase
+import ReSwift
 
-class CommunitiesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class CommunitiesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, StoreSubscriber {
     
     @IBOutlet weak var communityTableView: CommunityTableView!
     
@@ -15,6 +16,7 @@ class CommunitiesViewController: UIViewController, UITableViewDataSource, UITabl
         super.viewWillAppear(animated)
         
         tabBarController?.tabBar.isHidden = false
+        store.subscribe(self)
     }
     
     override func viewDidLoad() {
@@ -26,17 +28,17 @@ class CommunitiesViewController: UIViewController, UITableViewDataSource, UITabl
         // Do any additional setup after loading the view, typically from a nib.
         let db = Firestore.firestore()
         
-        db.collection("communities").getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    self.communities.append(Community(id: document.documentID, name: "hey"));
-                    print("\(document.documentID) => \(document.data())")
-                }
-                self.communityTableView.reloadData();
-            }
-        }
+//        db.collection("communities").getDocuments() { (querySnapshot, err) in
+//            if let err = err {
+//                print("Error getting documents: \(err)")
+//            } else {
+//                for document in querySnapshot!.documents {
+//                    self.communities.append(Community(id: document.documentID, name: "hey"));
+//                    print("\(document.documentID) => \(document.data())")
+//                }
+//                self.communityTableView.reloadData();
+//            }
+//        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -80,5 +82,11 @@ class CommunitiesViewController: UIViewController, UITableViewDataSource, UITabl
         
         // set a variable in the second view controller with the data to pass
         // secondViewController.receivedData = "hello"
+    }
+    
+    func newState(state: AppState) {
+        print(state)
+        self.communities = state.communities
+        self.communityTableView.reloadData();
     }
 }

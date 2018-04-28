@@ -1,6 +1,7 @@
 import UIKit
 import Firebase
 import FBSDKCoreKit
+import ReSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

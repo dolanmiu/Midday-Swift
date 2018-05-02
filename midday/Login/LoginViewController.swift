@@ -63,15 +63,19 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         guard let accessTokenString = accessToken?.tokenString else { return }
         
         let credential = FacebookAuthProvider.credential(withAccessToken: accessTokenString)
-
+        
         Auth.auth().signIn(with: credential) { (user, error) in
             if let error = error {
                 // ...
                 return
             }
+            
             // User is signed in
             // ...
             print("Logged in", user?.displayName);
+            
+            store.dispatch(SetUserAuthDetailsAction(uid: user!.uid, displayName: user!.displayName!, email: user!.email!, isEmailVerified: user!.isEmailVerified))
+            
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             
             let nextViewController = storyBoard.instantiateViewController(withIdentifier: "Main")

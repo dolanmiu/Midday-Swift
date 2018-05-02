@@ -7,6 +7,8 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         let fetcher = CommunitiesFetcher()
         fetcher.fetch()
+        let userFetcher = UserFetcher()
+        userFetcher.fetch(userId: <#T##String#>)
     }
 
     override func didReceiveMemoryWarning() {

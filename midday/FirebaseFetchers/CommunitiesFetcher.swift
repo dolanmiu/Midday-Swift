@@ -7,26 +7,6 @@ struct CommunityFetchData {
 }
 
 class CommunitiesFetcher {
-    
-    class func fetch(completion: @escaping (_ communities: [Community]) -> Void) {
-        let db = Firestore.firestore()
-
-        db.collection("communities").getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                var communities: [Community] = [Community]()
-
-                for document in querySnapshot!.documents {
-                    communities.append(Community(id: document.documentID, name: "hey"));
-                    print("\(document.documentID) => \(document.data())")
-                }
-                
-                completion(communities)
-            }
-        }
-    }
-    
     class func fetchOne(communityId: String, completion: @escaping (_ communities: CommunityFetchData) -> Void) {
         let db = Firestore.firestore()
         

@@ -14,7 +14,6 @@ func appReducer(action: Action, state: AppState?) -> AppState {
         state.communities = dict
     case let addCommunityAction as AddCommunityAction:
         state.communities[addCommunityAction.community.id] = addCommunityAction.community
-        print(state);
     case let addFeedAction as AddFeedItemToCommunityAction:
         let feedItem = addFeedAction.feedItem;
         

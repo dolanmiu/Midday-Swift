@@ -35,6 +35,9 @@
 		3EFD9215209501B100581281 /* UserFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFD9214209501B100581281 /* UserFetcher.swift */; };
 		3EFD92172095028F00581281 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFD92162095028F00581281 /* User.swift */; };
 		3EFD92192095370C00581281 /* UserActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFD92182095370C00581281 /* UserActions.swift */; };
+		3EFD921B209A665C00581281 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFD921A209A665C00581281 /* Reducer.swift */; };
+		3EFD921E209A6CE400581281 /* UserMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFD921D209A6CE400581281 /* UserMiddleware.swift */; };
+		3EFD9220209A967E00581281 /* UserLoadBookMarksMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFD921F209A967E00581281 /* UserLoadBookMarksMiddleware.swift */; };
 		C5E1640A4CEB3B531EF1FC31 /* Pods_middayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02ED33D5DD0EEBA8A237A200 /* Pods_middayTests.framework */; };
 		E8BF288D45969F51C39C7509 /* Pods_middayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D15D6DDFD5D4B1A7655A3CB /* Pods_middayUITests.framework */; };
 /* End PBXBuildFile section */
@@ -91,6 +94,9 @@
 		3EFD9214209501B100581281 /* UserFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFetcher.swift; sourceTree = "<group>"; };
 		3EFD92162095028F00581281 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3EFD92182095370C00581281 /* UserActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActions.swift; sourceTree = "<group>"; };
+		3EFD921A209A665C00581281 /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
+		3EFD921D209A6CE400581281 /* UserMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMiddleware.swift; sourceTree = "<group>"; };
+		3EFD921F209A967E00581281 /* UserLoadBookMarksMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoadBookMarksMiddleware.swift; sourceTree = "<group>"; };
 		47FB3D622D184427023C60D0 /* Pods_midday.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_midday.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EE7ECD85153BF31D4651F80 /* Pods-midday.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-midday.release.xcconfig"; path = "Pods/Target Support Files/Pods-midday/Pods-midday.release.xcconfig"; sourceTree = "<group>"; };
 		84412540D57A6E2B811CF873 /* Pods-middayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-middayTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-middayTests/Pods-middayTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -235,10 +241,12 @@
 		3EFD9206209289B000581281 /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				3EFD921C209A6CD400581281 /* Middleware */,
 				3EFD92132094CD0700581281 /* Models */,
 				3EFD920D20928FA600581281 /* Actions */,
 				3EFD9207209289CD00581281 /* AppState.swift */,
 				3EFD920B20928BA200581281 /* Store.swift */,
+				3EFD921A209A665C00581281 /* Reducer.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -269,6 +277,15 @@
 				3EFD92162095028F00581281 /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		3EFD921C209A6CD400581281 /* Middleware */ = {
+			isa = PBXGroup;
+			children = (
+				3EFD921D209A6CE400581281 /* UserMiddleware.swift */,
+				3EFD921F209A967E00581281 /* UserLoadBookMarksMiddleware.swift */,
+			);
+			path = Middleware;
 			sourceTree = "<group>";
 		};
 		A0BFB6649279F8FE2E31A523 /* Pods */ = {
@@ -661,14 +678,17 @@
 				3EFD9215209501B100581281 /* UserFetcher.swift in Sources */,
 				3E4AFA8420390DB700E26791 /* SecondViewController.swift in Sources */,
 				3EFD92122092ADE900581281 /* CommunitiesFetcher.swift in Sources */,
+				3EFD9220209A967E00581281 /* UserLoadBookMarksMiddleware.swift in Sources */,
 				3EFD920F20928FFC00581281 /* CommunityActions.swift in Sources */,
 				3E4AFA8020390DB700E26791 /* AppDelegate.swift in Sources */,
 				3EFD91F72076D19200581281 /* CommunityTableView.swift in Sources */,
 				3EFD91F32074454B00581281 /* CommunityTableViewCell.swift in Sources */,
+				3EFD921E209A6CE400581281 /* UserMiddleware.swift in Sources */,
 				3EC670FD2071C43F000E9F00 /* CommunitiesViewController.swift in Sources */,
 				3EFD91F52076CC8000581281 /* Community.swift in Sources */,
 				3EFD9208209289CD00581281 /* AppState.swift in Sources */,
 				3EFD92192095370C00581281 /* UserActions.swift in Sources */,
+				3EFD921B209A665C00581281 /* Reducer.swift in Sources */,
 				3EFD91FB207C499000581281 /* CommunityViewController.swift in Sources */,
 				3E4AFA8220390DB700E26791 /* HomeViewController.swift in Sources */,
 				3EFD92172095028F00581281 /* User.swift in Sources */,

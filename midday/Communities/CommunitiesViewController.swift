@@ -86,7 +86,7 @@ class CommunitiesViewController: UIViewController, UITableViewDataSource, UITabl
     
     func newState(state: AppState) {
         print(state)
-        self.communities = state.communities
+        self.communities = Array(state.communities.values)
         self.communityTableView.reloadData();
     }
 }

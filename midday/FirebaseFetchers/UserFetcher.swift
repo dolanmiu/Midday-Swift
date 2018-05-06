@@ -6,19 +6,20 @@ struct UserFetchData {
 }
 
 class UserFetcher {
-    func fetch(userId: String) {
+    class func fetch(userId: String, completion: @escaping (_ user: UserFetchData) -> Void) {
         let db = Firestore.firestore()
         
-        let docRef = db.collection("cities").document("user/\(userId)")
+        let docRef = db.collection("users").document(userId)
         
         docRef.getDocument { (document, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
                 let documentData = document!.data()
-                let user = UserFetchData(bookmarkedCommunityIds: documentData!["bookmarkedCommunityIds"] as! [String])
+                let bookmarkedCommunityIds = documentData!["bookmarkedCommunityIds"] as! [String];
+                let user = UserFetchData(bookmarkedCommunityIds: bookmarkedCommunityIds)
                 
-                store.dispatch();
+                completion(user)
                 print("\(document?.documentID) => \(document?.data())")
             }
         }

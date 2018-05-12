@@ -1,6 +1,6 @@
 import UIKit
 
-class CommunityDetailsViewController: UIViewController {
+class CommunityDetailsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

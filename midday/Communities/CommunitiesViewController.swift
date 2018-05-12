@@ -24,21 +24,6 @@ class CommunitiesViewController: UIViewController, UITableViewDataSource, UITabl
         
         self.communityTableView.dataSource = self
         self.communityTableView.delegate = self
-        
-        // Do any additional setup after loading the view, typically from a nib.
-        let db = Firestore.firestore()
-        
-//        db.collection("communities").getDocuments() { (querySnapshot, err) in
-//            if let err = err {
-//                print("Error getting documents: \(err)")
-//            } else {
-//                for document in querySnapshot!.documents {
-//                    self.communities.append(Community(id: document.documentID, name: "hey"));
-//                    print("\(document.documentID) => \(document.data())")
-//                }
-//                self.communityTableView.reloadData();
-//            }
-//        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -55,7 +40,7 @@ class CommunitiesViewController: UIViewController, UITableViewDataSource, UITabl
         let cellIdentifier = "CommunityTableViewCell"
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? CommunityTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of MealTableViewCell.")
+            fatalError("The dequeued cell is not the correct instance, CommunityTableViewCell")
         }
         
         // Fetches the appropriate meal for the data source layout.

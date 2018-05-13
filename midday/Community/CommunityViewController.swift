@@ -3,7 +3,7 @@ import Firebase
 
 class CommunityViewController: UIViewController {
     var feed: [FeedItem] = [FeedItem]()
-    
+    var community: Community?
     
     @IBOutlet weak var messageBoxView: UIView!
     @IBOutlet weak var feedTableView: UITableView!
@@ -17,7 +17,7 @@ class CommunityViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardShowNotification), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardHideNotification), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-
+        
         Firestore.firestore().collection("communities/2FH2nwgwQAs5H7FH0PWT/feed").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
@@ -31,10 +31,10 @@ class CommunityViewController: UIViewController {
             }
         }
         
-//        let c = NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["messageBoxView"])
-//        let d = NSLayoutConstraint.constraints(withVisualFormat: "V:[v0(48)]", options: NSLayoutFormatOptions(), metrics: nil, views: ["messageBoxView"])
-//        view.addConstraints([c, d])
-
+        //        let c = NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["messageBoxView"])
+        //        let d = NSLayoutConstraint.constraints(withVisualFormat: "V:[v0(48)]", options: NSLayoutFormatOptions(), metrics: nil, views: ["messageBoxView"])
+        //        view.addConstraints([c, d])
+        
         bottomConstraint = NSLayoutConstraint(item: messageBoxView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0);
         
         view.addConstraint(bottomConstraint);
@@ -57,15 +57,12 @@ class CommunityViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is CommunityDetailsViewController
+        {
+            let vc = segue.destination as? CommunityDetailsViewController
+            vc?.community = community
+        }
+    }
     
 }

@@ -4,6 +4,7 @@ import Firebase
 struct CommunityFetchData {
     let id: String
     let name: String
+    let description: String
 }
 
 class CommunitiesFetcher {
@@ -18,8 +19,11 @@ class CommunitiesFetcher {
             } else {
                 let documentData = document!.data()
                 let name = documentData!["name"] as! String;
+                let description = documentData!["description"] as! String;
+                
                 print(documentData!["feed"]);
-                let communityFetchData = CommunityFetchData(id: (document?.documentID)!, name: name)
+                
+                let communityFetchData = CommunityFetchData(id: (document?.documentID)!, name: name, description: description)
                 
                 completion(communityFetchData)
             }

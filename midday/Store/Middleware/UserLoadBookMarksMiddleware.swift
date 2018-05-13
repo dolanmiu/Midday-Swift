@@ -8,7 +8,7 @@ let userLoadBookmarksMiddleware: Middleware<StateType> = { dispatch, getState in
             if var action = action as? SetUserDataAction {
                 for bookmarkId in action.bookmarkedCommunityIds {
                     CommunitiesFetcher.fetchOne(communityId: bookmarkId, completion: {(communityFetchData: CommunityFetchData) -> Void in
-                        let community = Community(id: communityFetchData.id, name: communityFetchData.name)
+                        let community = Community(id: communityFetchData.id, name: communityFetchData.name, description: communityFetchData.description)
                         dispatch(AddCommunityAction(community: community));
                     })
                 }

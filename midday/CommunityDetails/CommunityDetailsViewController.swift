@@ -1,11 +1,27 @@
 import UIKit
+import Firebase
 
 class CommunityDetailsViewController: UITableViewController {
+    var community: Community?
+    
+    @IBOutlet weak var groupDescription: UILabel!
+    @IBOutlet weak var communityImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        groupDescription.text = community?.description
+        
+        let storage = Storage.storage()
+        
+        let storageRef = storage.reference()
+        let id = community!.id
+        let reference = storageRef.child("communities/\(id).jpg")
+        let placeholderImage = UIImage(named: "placeholder.jpg")
+        
+        self.communityImage.sd_setImage(with: reference, placeholderImage: placeholderImage)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

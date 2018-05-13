@@ -7,6 +7,7 @@ class CommunitiesViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var communityTableView: CommunityTableView!
     
     var communities: [Community] = [Community]()
+    var currentSelectedCommunity: Community?
     
     fileprivate func baseQuery() -> Query {
         return Firestore.firestore().collection("communities").limit(to: 50)
@@ -55,18 +56,16 @@ class CommunitiesViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Segue to the second view controller
+        currentSelectedCommunity = communities[indexPath.item]
         self.performSegue(withIdentifier: "viewCommunitySegue", sender: self)
     }
     
-    // This function is called before the segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        // get a reference to the second view controller
-        // let secondViewController = segue.destination as! CommunityViewController
-        
-        // set a variable in the second view controller with the data to pass
-        // secondViewController.receivedData = "hello"
+        if segue.destination is CommunityViewController
+        {
+            let vc = segue.destination as? CommunityViewController
+            vc?.community = currentSelectedCommunity
+        }
     }
     
     func newState(state: AppState) {

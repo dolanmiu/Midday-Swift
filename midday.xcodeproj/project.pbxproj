@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0DA9E82E03E5500DFE5FECBD /* Pods_midday.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47FB3D622D184427023C60D0 /* Pods_midday.framework */; };
+		3E040F3420AA44FA000801EF /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E040F3320AA44FA000801EF /* ProfileTableViewController.swift */; };
 		3E0CEB45207040E10016DD39 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E0CEB44207040E10016DD39 /* GoogleService-Info.plist */; };
 		3E0CEB46207040E20016DD39 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E0CEB44207040E10016DD39 /* GoogleService-Info.plist */; };
 		3E0CEB47207040E20016DD39 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E0CEB44207040E10016DD39 /* GoogleService-Info.plist */; };
@@ -63,6 +64,7 @@
 /* Begin PBXFileReference section */
 		02ED33D5DD0EEBA8A237A200 /* Pods_middayTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_middayTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		288B2C62F185006407F7564A /* Pods-middayTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-middayTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-middayTests/Pods-middayTests.release.xcconfig"; sourceTree = "<group>"; };
+		3E040F3320AA44FA000801EF /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		3E0CEB44207040E10016DD39 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3E0CEB4B207043A60016DD39 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		3E4AFA7C20390DB700E26791 /* midday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = midday.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +138,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E040F3220AA44D7000801EF /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				3E040F3320AA44FA000801EF /* ProfileTableViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		3E4AFA7320390DB700E26791 = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +171,7 @@
 		3E4AFA7E20390DB700E26791 /* midday */ = {
 			isa = PBXGroup;
 			children = (
+				3E040F3220AA44D7000801EF /* Profile */,
 				3EFD92102092ADAC00581281 /* FirebaseFetchers */,
 				3EFD9206209289B000581281 /* Store */,
 				3EFD9201207EE36F00581281 /* CommunityDetails */,
@@ -679,6 +690,7 @@
 				3E7CEE0A207056610082B935 /* LoginViewController.swift in Sources */,
 				3EFD9203207EE3AF00581281 /* CommunityDetailsViewController.swift in Sources */,
 				3EFD9215209501B100581281 /* UserFetcher.swift in Sources */,
+				3E040F3420AA44FA000801EF /* ProfileTableViewController.swift in Sources */,
 				3E4AFA8420390DB700E26791 /* SecondViewController.swift in Sources */,
 				3EFD92122092ADE900581281 /* CommunitiesFetcher.swift in Sources */,
 				3EFD9220209A967E00581281 /* UserLoadBookMarksMiddleware.swift in Sources */,

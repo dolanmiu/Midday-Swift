@@ -37,21 +37,17 @@ class CommunitiesViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // Table view cells are reused and should be dequeued using a cell identifier.
         let cellIdentifier = "CommunityTableViewCell"
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? CommunityTableViewCell  else {
             fatalError("The dequeued cell is not the correct instance, CommunityTableViewCell")
         }
         
-        // Fetches the appropriate meal for the data source layout.
         let community = self.communities[indexPath.row]
         
         cell.nameLabel.text = community.name
         cell.setImage(id: community.id)
-        // cell.photoImageView.image = meal.photo
-        // cell.ratingControl.rating = meal.rating
-//        cell.photoImageView.setImageForName(string: "Michael Bluth", backgroundColor: nil, circular: true, textAttributes: nil)
+
         return cell
     }
     

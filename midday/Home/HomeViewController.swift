@@ -1,10 +1,12 @@
 import UIKit
+import ReSwift
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, StoreSubscriber {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        store.subscribe(self)
     }
     
     override func didReceiveMemoryWarning() {
@@ -12,6 +14,8 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
+    func newState(state: AppState) {
+        print(state)
+    }
 }
 

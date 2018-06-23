@@ -1,5 +1,5 @@
 import UIKit
-import FirebaseStorageUI
+import FirebaseUI
 
 class CommunityTableViewCell: UITableViewCell {
 

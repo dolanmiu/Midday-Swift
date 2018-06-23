@@ -20,6 +20,7 @@
 		3E4AFA8C20390DB700E26791 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E4AFA8A20390DB700E26791 /* LaunchScreen.storyboard */; };
 		3E4AFA9720390DB700E26791 /* middayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4AFA9620390DB700E26791 /* middayTests.swift */; };
 		3E4AFAA220390DB700E26791 /* middayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4AFAA120390DB700E26791 /* middayUITests.swift */; };
+		3E725D9E20DF0B570015A7C2 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E725D9D20DF0B570015A7C2 /* FeedTableViewCell.swift */; };
 		3E7CEE0A207056610082B935 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7CEE09207056610082B935 /* LoginViewController.swift */; };
 		3EC670FD2071C43F000E9F00 /* CommunitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC670FC2071C43F000E9F00 /* CommunitiesViewController.swift */; };
 		3EFD91F32074454B00581281 /* CommunityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFD91F22074454B00581281 /* CommunityTableViewCell.swift */; };
@@ -81,6 +82,7 @@
 		3E4AFA9D20390DB700E26791 /* middayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = middayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E4AFAA120390DB700E26791 /* middayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = middayUITests.swift; sourceTree = "<group>"; };
 		3E4AFAA320390DB700E26791 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E725D9D20DF0B570015A7C2 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		3E7CEE09207056610082B935 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3EC670FC2071C43F000E9F00 /* CommunitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunitiesViewController.swift; sourceTree = "<group>"; };
 		3EFD91F22074454B00581281 /* CommunityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityTableViewCell.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				3EFD91FA207C499000581281 /* CommunityViewController.swift */,
+				3E725D9D20DF0B570015A7C2 /* FeedTableViewCell.swift */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -356,8 +359,6 @@
 				3E4AFA8E20390DB700E26791 /* Sources */,
 				3E4AFA8F20390DB700E26791 /* Frameworks */,
 				3E4AFA9020390DB700E26791 /* Resources */,
-				42214D6CBCE93F83B2A5B4CC /* [CP] Embed Pods Frameworks */,
-				5D64344C22E4091343E4F9FA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -377,8 +378,6 @@
 				3E4AFA9920390DB700E26791 /* Sources */,
 				3E4AFA9A20390DB700E26791 /* Frameworks */,
 				3E4AFA9B20390DB700E26791 /* Resources */,
-				A8805B1064DE9C66AD17AAB7 /* [CP] Embed Pods Frameworks */,
-				98ECF4087AAB20F37FB56417 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -517,36 +516,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-midday/Pods-midday-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		42214D6CBCE93F83B2A5B4CC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-middayTests/Pods-middayTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5D64344C22E4091343E4F9FA /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-middayTests/Pods-middayTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		73A288B7A8E4221FB6DF1EA7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -611,36 +580,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-midday/Pods-midday-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		98ECF4087AAB20F37FB56417 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-middayUITests/Pods-middayUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A8805B1064DE9C66AD17AAB7 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-middayUITests/Pods-middayUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		DA6E24208C1244BC1F899B8C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -688,6 +627,7 @@
 				3EFD91F9207B011400581281 /* AvatarImageView.swift in Sources */,
 				3EFD92052087FAAD00581281 /* FeedItem.swift in Sources */,
 				3E7CEE0A207056610082B935 /* LoginViewController.swift in Sources */,
+				3E725D9E20DF0B570015A7C2 /* FeedTableViewCell.swift in Sources */,
 				3EFD9203207EE3AF00581281 /* CommunityDetailsViewController.swift in Sources */,
 				3EFD9215209501B100581281 /* UserFetcher.swift in Sources */,
 				3E040F3420AA44FA000801EF /* ProfileTableViewController.swift in Sources */,
@@ -880,7 +820,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkarts.midday;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -895,7 +835,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkarts.midday;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

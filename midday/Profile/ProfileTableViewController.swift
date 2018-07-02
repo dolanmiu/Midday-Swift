@@ -5,6 +5,7 @@ class ProfileTableViewController: UITableViewController, StoreSubscriber {
     var user: User?
     
     @IBOutlet weak var userLabel: UILabel!
+    @IBOutlet weak var userImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,7 @@ class ProfileTableViewController: UITableViewController, StoreSubscriber {
 
     func newState(state: AppState) {
         self.user = state.user
-        self.userLabel.text = self.user?.displayName;
+        self.userLabel.text = self.user?.displayName
+        self.userImage.image = self.user?.photoImage
     }
 }

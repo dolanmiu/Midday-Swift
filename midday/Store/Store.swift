@@ -1,7 +1,7 @@
 import Foundation
 import ReSwift
 
-let middleware: [Middleware<AppState>] = [userLoginMiddleware, userLoadBookmarksMiddleware]
+let middleware: [Middleware<AppState>] = [userLoginMiddleware, userLoadBookmarksMiddleware, userLoadProfileImageMiddleware]
 
 let store = Store(
     reducer: appReducer,

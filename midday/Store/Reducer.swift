@@ -15,15 +15,17 @@ func appReducer(action: Action, state: AppState?) -> AppState {
     case let addCommunityAction as AddCommunityAction:
         state.communities[addCommunityAction.community.id] = addCommunityAction.community
     case let addFeedAction as AddFeedItemToCommunityAction:
-        let feedItem = addFeedAction.feedItem;
+        let feedItem = addFeedAction.feedItem
         
         state.communities[addFeedAction.communityId]?.feed[addFeedAction.feedItem.id] = feedItem
     case let setUserDetailAction as SetUserAuthDetailsAction:
         state.user.displayName = setUserDetailAction.displayName
         state.user.email = setUserDetailAction.email
-        state.user.uid = state.user.uid
+        state.user.uid = setUserDetailAction.uid
     case let setUserDataAction as SetUserDataAction:
         state.user.bookmarkedCommunityIds = setUserDataAction.bookmarkedCommunityIds
+    case let setProfileImageAction as SetUserProfileImageAction:
+        state.user.photoImage = setProfileImageAction.photoImage
     default: break
     }
     

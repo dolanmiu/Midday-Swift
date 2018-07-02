@@ -74,7 +74,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             // ...
             print("Logged in", user?.displayName);
             
-            store.dispatch(SetUserAuthDetailsAction(uid: user!.uid, displayName: user!.displayName!, email: user!.email!, isEmailVerified: user!.isEmailVerified))
+            store.dispatch(SetUserAuthDetailsAction(uid: user!.uid, displayName: user!.displayName!, email: user!.email!, isEmailVerified: user!.isEmailVerified, photoUrl: (user?.photoURL)!))
             
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             

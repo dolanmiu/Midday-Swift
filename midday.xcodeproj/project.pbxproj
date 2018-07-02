@@ -21,6 +21,7 @@
 		3E4AFA9720390DB700E26791 /* middayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4AFA9620390DB700E26791 /* middayTests.swift */; };
 		3E4AFAA220390DB700E26791 /* middayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4AFAA120390DB700E26791 /* middayUITests.swift */; };
 		3E725D9E20DF0B570015A7C2 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E725D9D20DF0B570015A7C2 /* FeedTableViewCell.swift */; };
+		3E725DA020DF1FF70015A7C2 /* UserLoadProfileImageMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E725D9F20DF1FF70015A7C2 /* UserLoadProfileImageMiddleware.swift */; };
 		3E7CEE0A207056610082B935 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7CEE09207056610082B935 /* LoginViewController.swift */; };
 		3EC670FD2071C43F000E9F00 /* CommunitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC670FC2071C43F000E9F00 /* CommunitiesViewController.swift */; };
 		3EFD91F32074454B00581281 /* CommunityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFD91F22074454B00581281 /* CommunityTableViewCell.swift */; };
@@ -83,6 +84,7 @@
 		3E4AFAA120390DB700E26791 /* middayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = middayUITests.swift; sourceTree = "<group>"; };
 		3E4AFAA320390DB700E26791 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E725D9D20DF0B570015A7C2 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		3E725D9F20DF1FF70015A7C2 /* UserLoadProfileImageMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoadProfileImageMiddleware.swift; sourceTree = "<group>"; };
 		3E7CEE09207056610082B935 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3EC670FC2071C43F000E9F00 /* CommunitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunitiesViewController.swift; sourceTree = "<group>"; };
 		3EFD91F22074454B00581281 /* CommunityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityTableViewCell.swift; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 			children = (
 				3EFD921D209A6CE400581281 /* UserMiddleware.swift */,
 				3EFD921F209A967E00581281 /* UserLoadBookMarksMiddleware.swift */,
+				3E725D9F20DF1FF70015A7C2 /* UserLoadProfileImageMiddleware.swift */,
 			);
 			path = Middleware;
 			sourceTree = "<group>";
@@ -629,6 +632,7 @@
 				3E7CEE0A207056610082B935 /* LoginViewController.swift in Sources */,
 				3E725D9E20DF0B570015A7C2 /* FeedTableViewCell.swift in Sources */,
 				3EFD9203207EE3AF00581281 /* CommunityDetailsViewController.swift in Sources */,
+				3E725DA020DF1FF70015A7C2 /* UserLoadProfileImageMiddleware.swift in Sources */,
 				3EFD9215209501B100581281 /* UserFetcher.swift in Sources */,
 				3E040F3420AA44FA000801EF /* ProfileTableViewController.swift in Sources */,
 				3E4AFA8420390DB700E26791 /* SecondViewController.swift in Sources */,

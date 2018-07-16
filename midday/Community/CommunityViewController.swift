@@ -60,6 +60,9 @@ class CommunityViewController: UIViewController, UITableViewDataSource, UITableV
         bottomConstraint = NSLayoutConstraint(item: messageBoxView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0);
         
         view.addConstraint(bottomConstraint);
+        
+        // Part of flipping it so messages are bottom up
+        feedTableView.transform = CGAffineTransform(scaleX: 1, y: -1)
 
         store.subscribe(self)
     }
@@ -103,6 +106,8 @@ class CommunityViewController: UIViewController, UITableViewDataSource, UITableV
         let feed = self.feed[indexPath.row]
         
         cell.message.text = feed.type
+        // Part of flipping it so messages are bottom up
+        cell.contentView.transform = CGAffineTransform(scaleX: 1, y: -1)
         
         return cell
     }

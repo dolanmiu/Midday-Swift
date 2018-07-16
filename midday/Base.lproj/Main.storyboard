@@ -399,6 +399,9 @@
                                         <rect key="frame" x="321" y="6" width="46" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Send"/>
+                                        <connections>
+                                            <action selector="sendButtonClick:" destination="mvJ-3b-huU" eventType="touchUpInside" id="EgL-Wa-gHg"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.029831843470000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -417,6 +420,7 @@
                     <connections>
                         <outlet property="feedTableView" destination="bAp-Ea-c4C" id="8hg-go-mvL"/>
                         <outlet property="messageBoxView" destination="rTw-we-9ig" id="j8U-7R-2DU"/>
+                        <outlet property="messageTextbox" destination="gRC-IM-qMO" id="ZwI-jn-TgT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="buY-JP-Fca" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -5,7 +5,20 @@ import ReSwift
 class CommunityViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, StoreSubscriber {
     var feed: [FeedItem] = [FeedItem]()
     var community: Community?
+    var feedRef: CollectionReference?
     
+    @IBAction func sendButtonClick(_ sender: Any) {
+        feedRef?.addDocument(data: [
+            "type": "message",
+            "content": messageTextbox?.text ?? "",
+            "timestamp": ServerValue.timestamp()
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            }
+        }
+    }
+    @IBOutlet weak var messageTextbox: UITextField!
     @IBOutlet weak var messageBoxView: UIView!
     @IBOutlet weak var feedTableView: UITableView!
     
@@ -22,35 +35,47 @@ class CommunityViewController: UIViewController, UITableViewDataSource, UITableV
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardShowNotification), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardHideNotification), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
-        let feedRef = Firestore.firestore().collection("communities/2FH2nwgwQAs5H7FH0PWT/feed")
+        feedRef = Firestore.firestore().collection("communities/2FH2nwgwQAs5H7FH0PWT/feed")
             
-        feedRef
-            .order(by: "timestamp")
-            .limit(to: 3)
-            .getDocuments() { (querySnapshot, err) in
-                if let err = err {
-                    print("Error getting documents: \(err)")
-                } else {
-                    for document in querySnapshot!.documents {
+//        feedRef
+//            .order(by: "timestamp")
+//            .limit(to: 3)
+//            .getDocuments() { (querySnapshot, err) in
+//                if let err = err {
+//                    print("Error getting documents: \(err)")
+//                } else {
+//                    for document in querySnapshot!.documents {
+//                        let dataDescription = document.data().map(String.init(describing:));
+//                        print(document.data())
+//                        self.feed.append(FeedItem(id: document.documentID, type: dataDescription[0]))
+//                    }
+//                    self.feedTableView.reloadData();
+//                }
+//            }
+        
+        feedRef?
+            .addSnapshotListener { querySnapshot, error in
+                guard let snapshot = querySnapshot else {
+                    print("Error fetching snapshots: \(error!)")
+                    return
+                }
+                
+                snapshot.documentChanges.forEach { diff in
+                    if (diff.type == .added) {
+                        let document = diff.document;
                         let dataDescription = document.data().map(String.init(describing:));
                         print(document.data())
-                        self.feed.append(FeedItem(id: document.documentID, type: dataDescription[0]));
+                        self.feed.append(FeedItem(id: document.documentID, type: dataDescription[0]))
                     }
-                    self.feedTableView.reloadData();
+                    if (diff.type == .modified) {
+                        print("Modified city: \(diff.document.data())")
+                    }
+                    if (diff.type == .removed) {
+                        print("Removed city: \(diff.document.data())")
+                    }
                 }
-            }
-        
-        feedRef.addSnapshotListener { querySnapshot, err in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    let dataDescription = document.data().map(String.init(describing:));
-                    print(document.data())
-                    self.feed.append(FeedItem(id: document.documentID, type: dataDescription[0]));
-                }
+                
                 self.feedTableView.reloadData();
-            }
         }
         
         //        let c = NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["messageBoxView"])

@@ -20,6 +20,20 @@ class CommunityDetailsViewController: UITableViewController {
         let placeholderImage = UIImage(named: "placeholder.jpg")
         
         self.communityImage.sd_setImage(with: reference, placeholderImage: placeholderImage)
+        
+        let db = Firestore.firestore()
+
+        db.collection("users").whereField("bookmarkedCommunityIds.\(id)", isEqualTo: true)
+            .getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        print("\(document.documentID) => \(document.data())")
+                    }
+                }
+        }
+
     }
     
     override func didReceiveMemoryWarning() {

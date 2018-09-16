@@ -344,6 +344,7 @@
 				3E4AFA7A20390DB700E26791 /* Resources */,
 				73A288B7A8E4221FB6DF1EA7 /* [CP] Embed Pods Frameworks */,
 				10A1BA04AC401F17BA680DC1 /* [CP] Copy Pods Resources */,
+				3E8ED4F4214DE1F100233007 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -518,6 +519,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-midday/Pods-midday-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		3E8ED4F4214DE1F100233007 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 		73A288B7A8E4221FB6DF1EA7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

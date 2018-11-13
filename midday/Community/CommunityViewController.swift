@@ -32,8 +32,8 @@ class CommunityViewController: UIViewController, UITableViewDataSource, UITableV
         
         // tabBarController?.tabBar.isHidden = true
         
-        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardShowNotification), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardHideNotification), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardShowNotification), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardHideNotification), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         feedRef = Firestore.firestore().collection("communities/2FH2nwgwQAs5H7FH0PWT/feed")
             
@@ -94,7 +94,7 @@ class CommunityViewController: UIViewController, UITableViewDataSource, UITableV
     
     @objc func handleKeyboardShowNotification(notification: Notification) {
         if let userInfo = notification.userInfo {
-            let keyboardFrame = userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue
+            let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue
             
             bottomConstraint.constant = -(keyboardFrame?.cgRectValue.height)!
         }

@@ -12,11 +12,9 @@ target 'midday' do
   pod 'Firebase/Firestore'
   pod 'FirebaseUI'
   pod 'Firebase/Storage'
-  pod 'FacebookCore'
-  pod 'FacebookLogin'
-  pod 'FacebookShare'
-  pod 'InitialsImageView', '0.2.0'
-  pod 'AvatarImageView', '~> 2.1.0'
+  pod 'FacebookCore', '0.5.0'
+  pod 'FacebookLogin', '0.5.0'
+  pod 'FacebookShare', '0.5.0'
   pod 'ReSwift'
   
   target 'middayTests' do
